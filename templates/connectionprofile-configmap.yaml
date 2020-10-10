@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hlf-connection
+  labels:
+data:
+  {{- (.Files.Glob "connection-profile/*").AsConfig | nindent 2 }}
