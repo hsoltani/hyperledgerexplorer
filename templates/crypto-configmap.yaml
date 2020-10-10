@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hlf-crypto
+  labels:
+data:
+  {{- (.Files.Glob "crypto-config/*").AsConfig | nindent 2 }}
