@@ -21,6 +21,9 @@ spec:
       - name: crypto
         configMap:
           name: hlf-crypto  
+      - name: connection
+        configMap:
+          name: hlf-connection  
       containers:
       - name: explorer
         image: hyperledger/explorer:latest
@@ -62,6 +65,8 @@ spec:
           subPath: config.json
         - mountPath: /tmp/crypto
           name: crypto
+        - mountPath: /opt/explorer/app/platform/fabric/connection-profile
+          name: connection
           
           
         ports:
