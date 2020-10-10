@@ -27,6 +27,7 @@ spec:
       containers:
       - name: explorer
         image: hyperledger/explorer:latest
+        command: ["sh" , "-c" , "cp /config/* /data/ && chmod -R 775 /data/ && /data/main.sh"]
       #  command: ["sh" , "-c" , "main.sh install"]
       #  ./main.sh install
       #  command: ["sh" , "-c" , "cp /config/* /data/ && chmod -R 775 /data/ && /data/run.sh"] dorost
