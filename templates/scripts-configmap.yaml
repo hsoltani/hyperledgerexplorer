@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hlf-scripts
+  labels:
+data:
+  {{- (.Files.Glob "config/explorer/app/*").AsConfig | nindent 2 }}

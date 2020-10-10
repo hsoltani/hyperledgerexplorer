@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hlf-explorer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hlf-explorer
+  template:
+    metadata:
+      labels:
+        app: hlf-explorer
+    spec:
+      volumes:
+      - name: data
+        emptyDir: {}
+      - name: config
+        configMap:
+          name: hlf-scripts
+      containers:
+      - name: explorer
+        image: hyperledger/explorer:latest
+        command: ["sh" , "-c" , "main.sh install"]
+      #  ./main.sh install
+      #  command: ["sh" , "-c" , "cp /config/* /data/ && chmod -R 775 /data/ && /data/run.sh"] dorost
+      #  command: ["sh" , "-c" , "chmod -R 775 /opt/explorer/ && /opt/explorer/run.sh"]
+      #  command: ["sh", "-c", "node blockchain-explorer/main.js && tail -f /dev/null"]
+        
+       
+
+        env:
+        - name: DATABASE_HOST
+          value: explorerdb
+        - name: DATABASE_DATABASE
+          value: fabricexplorer
+        - name: DATABASE_USERNAME
+          value: hppoc
+        - name: DATABASE_PASSWD
+          value: password
+        - name: LOG_LEVEL_APP
+          value: debug
+        - name: LOG_LEVEL_DB
+          value: debug
+        - name: LOG_LEVEL_CONSOLE
+          value: info
+        - name: LOG_CONSOLE_STDOUT
+          value: "true"
+        - name: DISCOVERY_AS_LOCALHOST
+          value: "false"
+        
+        volumeMounts:
+        - mountPath: /data
+          name: data
+        - mountPath: /config
+          name: config
+        - mountPath: /opt/explorer/app/platform/fabric/config.json
+          name: config
+          subPath: config.json
+
+          
+          
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP  
