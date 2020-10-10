@@ -18,6 +18,9 @@ spec:
       - name: config
         configMap:
           name: hlf-scripts
+      - name: crypto
+        configMap:
+          name: hlf-crypto  
       containers:
       - name: explorer
         image: hyperledger/explorer:latest
@@ -57,7 +60,8 @@ spec:
         - mountPath: /opt/explorer/app/platform/fabric/config.json
           name: config
           subPath: config.json
-
+        - mountPath: /tmp/crypto
+          name: crypto
           
           
         ports:
