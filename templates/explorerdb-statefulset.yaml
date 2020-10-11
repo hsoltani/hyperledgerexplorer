@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: blockchain-explorer-db
+  name: explorerdb.mynetwork.com
   
 spec:
   replicas: 1
@@ -27,7 +27,7 @@ spec:
         image: hyperledger/explorer-db:latest
         
         
-        
+        hostname: explorerdb.mynetwork.com
         env:
           - name: DATABASE_DATABASE
             value: fabricexplorer
