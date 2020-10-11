@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: hlf-explorerdb
+  name: blockchain-explorer-db
   
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hlf-explorerdb
+      app: explorer-db
       
   template:
     metadata:
       labels:
-        app: hlf-explorerdb
+        app: explorer-db
         
     spec:
       volumes:
@@ -23,7 +23,7 @@ spec:
           name: hlf-scripts
           
       containers:
-      - name: explorerdb
+      - name: postgres
         image: hyperledger/explorer-db:latest
         
         
