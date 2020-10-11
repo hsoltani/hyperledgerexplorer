@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hlf-explorer
+  name: explorer.mynetwork.com
 spec:
   replicas: 1
   selector:
@@ -27,6 +27,7 @@ spec:
       containers:
       - name: explorer
         image: hyperledger/explorer:latest
+        hostname: explorer.mynetwork.com
       #  command: ["sh" , "-c" , "pg_isready -h localhost -p 5432 -q -U postgres"]
       #  command: ["sh" , "-c" , "cp /config/* /data/ && chmod -R 775 /data/ && /data/main.sh install"]
       #  command: ["sh" , "-c" , "main.sh install"]
@@ -39,7 +40,7 @@ spec:
 
         env:
         - name: DATABASE_HOST
-          value: blockchain-explorer-db
+          value: explorerdb.mynetwork.com
         - name: DATABASE_DATABASE
           value: fabricexplorer
         - name: DATABASE_USERNAME
