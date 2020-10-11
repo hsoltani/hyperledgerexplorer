@@ -27,7 +27,7 @@ spec:
       containers:
       - name: explorer
         image: hyperledger/explorer:latest
-        command: ["sh" , "-c" , "npm install"]
+        command: ["sh" , "-c" , "pg_isready -h localhost -p 5432 -q -U postgres"]
       #  command: ["sh" , "-c" , "cp /config/* /data/ && chmod -R 775 /data/ && /data/main.sh install"]
       #  command: ["sh" , "-c" , "main.sh install"]
       #  ./main.sh install
