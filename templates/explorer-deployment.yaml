@@ -12,6 +12,11 @@ spec:
       labels:
         app: hlf-explorer
     spec:
+      
+      networks:
+        mynetwork.com:
+          external:
+            name: net_byfn
       volumes:
       - name: data
         emptyDir: {}
