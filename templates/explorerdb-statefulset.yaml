@@ -7,14 +7,18 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: explorer-db
+      app: explorerdb.mynetwork.com
       
   template:
     metadata:
       labels:
-        app: explorer-db
+        app: explorerdb.mynetwork.com
         
     spec:
+      networks:
+        mynetwork.com:
+          external:
+            name: net_byfn
       volumes:
       - name: pgdata
         emptyDir: {}
