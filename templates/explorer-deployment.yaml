@@ -39,7 +39,7 @@ spec:
 
         env:
         - name: DATABASE_HOST
-          value: explorerdb.mynetwork.com
+          value: blockchain-explorer-db
         - name: DATABASE_DATABASE
           value: fabricexplorer
         - name: DATABASE_USERNAME
@@ -71,7 +71,7 @@ spec:
           name: connection
           
           
-      ##  ports:
-      ##  - name: http
-      ##    containerPort: 8080
-      ##   protocol: TCP  
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP  
