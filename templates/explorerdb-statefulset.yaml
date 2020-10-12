@@ -20,6 +20,8 @@ spec:
           external:
             name: net_byfn
       volumes:
+      - name: data
+        emptyDir: {}
       - name: pgdata
         emptyDir: {}
       - name: config
