@@ -49,7 +49,7 @@ spec:
         volumeMounts:
         - mountPath: /data
           name: data
-        - mountPath: /config
+        - mountPath: /explorer/src/scripts
           name: config
         - mountPath: /opt/explorer/app/platform/fabric/config.json
           name: config
