@@ -32,7 +32,7 @@ spec:
         
         
         hostname: explorerdb.mynetwork.com
-        command: ["sh" , "-c" , "createdb.sh"]
+        command: ["sh" , "-c" , "/docker-entrypoint-initdb.d/createdb.sh"]
         env:
           - name: DATABASE_DATABASE
             value: fabricexplorer
