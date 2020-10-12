@@ -37,7 +37,7 @@ spec:
       #  command: ["sh" , "-c" , "cp /config/* /data/ && chmod -R 775 /data/ && /data/main.sh install"]
       #  command: ["sh" , "-c" , "main.sh install"]
       #  ./main.sh install
-        command: ["sh" , "-c" , "cp /config/* /data/ && chmod -R 775 /data/ && /data/run.sh"]
+        command: ["sh" , "-c" , "cp /explorer/src/scripts/* /data/ && chmod -R 775 /data/ && /data/run.sh"]
       #  command: ["sh" , "-c" , "chmod -R 775 /opt/explorer/ && /opt/explorer/run.sh"]
       #  command: ["sh", "-c", "node blockchain-explorer/main.js && tail -f /dev/null"]
         
