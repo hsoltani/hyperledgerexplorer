@@ -32,7 +32,7 @@ spec:
         
         
         hostname: explorerdb.mynetwork.com
-        command: ["sh" , "-c" , "pg_isready -h localhost -p 5432 -q -U postgres"]
+        command: ["sh" , "-c" , "createdb.sh"]
         env:
           - name: DATABASE_DATABASE
             value: fabricexplorer
