@@ -50,9 +50,9 @@ spec:
         - name: pgdata
           mountPath: /var/lib/postgresql/data
          
-        ports:
-        - name: http
-          containerPort: 5432
-          protocol: TCP
+       ## ports:
+       ## - name: http
+       ##  containerPort: 5432
+       ##   protocol: TCP
       
      
