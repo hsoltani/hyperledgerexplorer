@@ -44,8 +44,6 @@ spec:
        
 
         env:
-        - name: DATABASE_HOST
-          value: explorerdb.mynetwork.com
         - name: DATABASE_DATABASE
           value: fabricexplorer
         - name: DATABASE_USERNAME
