@@ -44,7 +44,24 @@ spec:
        
 
         env:
-        
+        - name: DATABASE_HOST
+          value: explorerdb.mynetwork.com
+        - name: DATABASE_DATABASE
+          value: fabricexplorer
+        - name: DATABASE_USERNAME
+          value: hppoc
+        - name: DATABASE_PASSWD
+          value: password
+        - name: LOG_LEVEL_APP
+          value: debug
+        - name: LOG_LEVEL_DB
+          value: debug
+        - name: LOG_LEVEL_CONSOLE
+          value: info
+        - name: LOG_CONSOLE_STDOUT
+          value: "true"
+        - name: DISCOVERY_AS_LOCALHOST
+          value: "false"
         
         volumeMounts:
         - mountPath: /data
