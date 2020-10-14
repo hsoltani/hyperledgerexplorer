@@ -45,6 +45,7 @@ spec:
           apk add sudo && \
           rm -rf /var/cache/apk/* && \
           chmod +x ./createdb.sh && \
+          ln -s /tmp/.s.PGSQL.5432 /var/run/postgresql/.s.PGSQL.5432 && \
           ./createdb.sh"]
         env:
           - name: DATABASE_DATABASE
