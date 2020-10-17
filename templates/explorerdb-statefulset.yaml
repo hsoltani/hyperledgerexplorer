@@ -30,7 +30,7 @@ spec:
           
       containers:
       - name: postgres
-        image: hyperledger/explorer-db:latest
+        image: postgres:10-alpine
         ports:
           - containerPort: 5432
         
