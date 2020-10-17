@@ -44,6 +44,8 @@ spec:
        
 
         env:
+        - name: TZ
+          value: "Asia/Singapore"
         - name: DATABASE_HOST
           value: explorerdb.mynetwork.com
         - name: DATABASE_DATABASE
