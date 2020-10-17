@@ -29,7 +29,9 @@ echo "Executing SQL scripts, OS="$OSTYPE
 
 #support for OS
 case $OSTYPE in
-ln -s /tmp/.s.PGSQL.5432 /var/run/postgresql/.s.PGSQL.5432
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+
 
 darwin*) psql postgres -v dbname=$DATABASE -v user=$USER -v passwd=$PASSWD -f ./explorerpg.sql ;
 psql postgres -v dbname=$DATABASE -v user=$USER -v passwd=$PASSWD -f ./updatepg.sql ;;
