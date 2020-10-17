@@ -46,6 +46,7 @@ spec:
           apk add sudo && \
           rm -rf /var/cache/apk/* && \
           chmod +x ./createdb.sh && \
+          ln -s /var/run/postgresql/.s.PGSQL.5432 /tmp/.s.PGSQL.5432 && \
           sudo -u postgres ./createdb.sh"]
         env:
           - name: TZ
