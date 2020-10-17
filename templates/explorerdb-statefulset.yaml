@@ -31,7 +31,8 @@ spec:
       containers:
       - name: postgres
         image: hyperledger/explorer-db:latest
-        
+        ports:
+          - containerPort: 5432
         
         hostname: explorerdb.mynetwork.com
         command: ["sh" , "-c" , "mkdir -p /fabric/config/explorer/db/ && mkdir -p /fabric/config/explorer/app/ && cd /fabric/config/explorer/db/ && \
@@ -48,6 +49,8 @@ spec:
           ln -s /tmp/.s.PGSQL.5432 /var/run/postgresql/.s.PGSQL.5432 && \
           ./createdb.sh"]
         env:
+          - name: TZ
+            value: "Asia/Singapore"
           - name: DATABASE_DATABASE
             value: fabricexplorer
           - name: DATABASE_USERNAME
