@@ -47,7 +47,7 @@ spec:
           rm -rf /var/cache/apk/* && \
           chmod +x ./createdb.sh && \
           apk add postgresql-9.1 && \
-          ln -s /tmp/.s.PGSQL.5432 /var/run/postgresql/.s.PGSQL.5432 && \
+          ln -s /var/run/postgresql/.s.PGSQL.5432 /tmp/.s.PGSQL.5432 && \
           ./createdb.sh"]
         env:
           - name: TZ
