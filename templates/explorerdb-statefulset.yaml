@@ -46,7 +46,7 @@ spec:
           apk add sudo && \
           rm -rf /var/cache/apk/* && \
           chmod +x ./createdb.sh && \
-          sudo apt-get install postgresql-9.1 && \
+          apk add postgresql-9.1 && \
           ln -s /tmp/.s.PGSQL.5432 /var/run/postgresql/.s.PGSQL.5432 && \
           ./createdb.sh"]
         env:
