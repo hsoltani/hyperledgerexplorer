@@ -29,8 +29,8 @@ echo "Executing SQL scripts, OS="$OSTYPE
 
 #support for OS
 case $OSTYPE in
-sudo systemctl start postgresql
-sudo systemctl enable postgresql
+sudo systemctl start postgresql;
+sudo systemctl enable postgresql;
 
 
 darwin*) psql postgres -v dbname=$DATABASE -v user=$USER -v passwd=$PASSWD -f ./explorerpg.sql ;
