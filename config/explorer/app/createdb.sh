@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # SPDX-License-Identifier: Apache-2.0
-
+ln -s /var/run/postgresql/.s.PGSQL.5432 /tmp/.s.PGSQL.5432
 echo "Copying ENV variables into temp file..."
 node processenv.js
 if [ $( jq .DATABASE_USERNAME /tmp/process.env.json) == null ]; then
@@ -29,8 +29,7 @@ echo "Executing SQL scripts, OS="$OSTYPE
 
 #support for OS
 case $OSTYPE in
-sudo systemctl start postgresql;
-sudo systemctl enable postgresql;
+
 
 
 darwin*) psql postgres -v dbname=$DATABASE -v user=$USER -v passwd=$PASSWD -f ./explorerpg.sql ;
