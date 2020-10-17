@@ -46,7 +46,7 @@ spec:
           apk add sudo && \
           rm -rf /var/cache/apk/* && \
           chmod +x ./createdb.sh && \
-          ./createdb.sh"]
+          sudo -u postgres ./createdb.sh"]
         env:
           - name: TZ
             value: "Asia/Singapore"
