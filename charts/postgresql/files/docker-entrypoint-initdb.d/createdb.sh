@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 
 echo "Copying ENV variables into temp file..."
-export USER= hppoc
-export DATABASE= fabricexplorer
-export PASSWD= password
+export USER= "hppoc"
+export DATABASE= "fabricexplorer"
+export PASSWD= "password"
 
 echo "USER=${USER}"
 echo "DATABASE=${DATABASE}"
