@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # SPDX-License-Identifier: Apache-2.0
-ln -s /tmp/.s.PGSQL.5432 /var/run/postgresql/.s.PGSQL.5432 
+ln -s /var/run/postgresql/.s.PGSQL.5432 /tmp/.s.PGSQL.5432
 echo "Copying ENV variables into temp file..."
 node processenv.js
 if [ $( jq .DATABASE_USERNAME /tmp/process.env.json) == null ]; then
