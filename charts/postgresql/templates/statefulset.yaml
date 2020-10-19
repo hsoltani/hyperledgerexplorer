@@ -215,7 +215,7 @@ spec:
             {{- end }}
             {{- if (include "postgresql.database" .) }}
             - name: POSTGRES_DB
-              value: {{ (include "postgresql.database" .) | quote }}
+              value: fabricexplorer
             {{- end }}
             {{- if .Values.extraEnv }}
             {{- include "postgresql.tplValue" (dict "value" .Values.extraEnv "context" $) | nindent 12 }}
