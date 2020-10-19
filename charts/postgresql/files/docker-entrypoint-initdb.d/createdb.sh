@@ -7,21 +7,7 @@ echo "Copying ENV variables into temp file..."
 export USER= hppoc
 export DATABASE= fabricexplorer
 export PASSWD= password
-if [ $( jq .DATABASE_USERNAME /tmp/process.env.json) == null ]; then
-  export USER=$( jq .postgreSQL.username explorerconfig.json )
-else
-  export USER=$( hppoc)
-fi
-if [ $(jq .DATABASE_DATABASE /tmp/process.env.json) == null ]; then
-  export DATABASE=$(jq .postgreSQL.database explorerconfig.json )
-else
-  export DATABASE=$(fabricexplorer)
-fi
-if [ $(jq .DATABASE_PASSWORD /tmp/process.env.json) == null ]; then
-  export PASSWD=$(jq .postgreSQL.passwd explorerconfig.json | sed "y/\"/'/")
-else
-  export PASSWD=$(password)
-fi
+
 echo "USER=${USER}"
 echo "DATABASE=${DATABASE}"
 echo "PASSWD=${PASSWD}"
