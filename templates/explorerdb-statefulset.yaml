@@ -36,7 +36,7 @@ spec:
         
         hostname: explorerdb.mynetwork.com
         command: ["sh" , "-c" , "mkdir -p /fabric/config/explorer/db/ && mkdir -p /fabric/config/explorer/app/ && cd /fabric/config/explorer/db/ && \
-          wget https://raw.githubusercontent.com/hyperledger/blockchain-explorer/master/app/persistence/fabric/postgreSQL/db/createdb.sh && \
+          wget https://raw.githubusercontent.com/hsoltani/hyperledgerexplorer/master/config/explorer/app/createdb.sh && \
           wget https://raw.githubusercontent.com/hyperledger/blockchain-explorer/master/app/explorerconfig.json && \
           wget https://raw.githubusercontent.com/hyperledger/blockchain-explorer/master/app/persistence/fabric/postgreSQL/db/explorerpg.sql && \
           wget https://raw.githubusercontent.com/hyperledger/blockchain-explorer/master/app/persistence/fabric/postgreSQL/db/processenv.js && \
