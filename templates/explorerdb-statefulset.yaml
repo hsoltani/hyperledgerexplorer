@@ -30,7 +30,7 @@ spec:
           
       containers:
       - name: postgres
-        image: hyperledger/explorer-db:latest
+        image: docker.io/bitnami/postgresql:11.8.0-debian-10-r61
         ports:
           - containerPort: 5432
         
