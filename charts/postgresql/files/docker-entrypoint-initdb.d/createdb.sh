@@ -21,14 +21,14 @@ case $OSTYPE in
 
 
 
-darwin*) psql postgres -v dbname=fabricexplorer -v user=hppoc -v passwd=password -f ./explorerpg.sql ;
-psql postgres -v dbname=fabricexplorer -v user=hppoc -v passwd=password -f ./updatepg.sql ;;
+darwin*) psql postgres -d fabricexplorer -U hppoc -W password -f ./explorerpg.sql ;
+psql postgres -d fabricexplorer -U hppoc -W password -f ./updatepg.sql ;;
 linux*)
 if [ $(id -un) = 'postgres' ]; then
   PSQL="psql"
 else
   PSQL="sudo -u postgres psql"
 fi;
-${PSQL} -v dbname=fabricexplorer -v user=hppoc -v passwd=password -f ./explorerpg.sql ;
-${PSQL} -v dbname=fabricexplorer -v user=hppoc -v passwd=password -f ./updatepg.sql ;;
+${PSQL} -d fabricexplorer -U hppoc -W password -f ./explorerpg.sql ;
+${PSQL} -d fabricexplorer -U hppoc -W password -f ./updatepg.sql ;;
 esac
